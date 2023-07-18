@@ -147,7 +147,7 @@ button{
         margin-left: 10%;
     }
     .container{
-        height: auto;
+        height: 100vh;
         background: linear-gradient(293deg, #6d23a0, #e8d914);
     }
 }
