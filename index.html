@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/63069/weather-icon-clipart-xl.png">
+    <title>Clothes</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main"></div>
+        <div class="body">
+            <div class="head">
+                <div class="h1">⚡⚡You can get some advices for what you should wear in which degree⚡⚡</div>
+            <div class="form">
+                <input type="number" class="input" placeholder="Write the degree °C">
+                <button type="button" class="btn">CLICK</button>
+            </div>
+            <div class="a">
+                <a class="link" href="https://obhavo.uz/" target="_blank">Don't you know the weather?</a>
+            </div>
+            </div>
+           <div class="clothesall">
+            <!-- <div class="clothes clothes1">
+                <table>
+                    <tr>
+                        <td class="td">
+                            <div class="card">
+                            <img src="data:image/jpeg;base64,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" alt="">
+                            <div class="name">Underwear</div>
+                        </div>
+                    </td>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://pyxis.nymag.com/v1/imgs/601/f30/44a1f148fcd870e99dd44dccaf9ec27591.jpg" alt="">
+                        <div class="name">Underwear</div>
+                    </div>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                    <div class="name">Down Jacket</div>
+                </div>
+            </td>
+            <td class="td">
+                <div class="card">
+                <img src="https://u7q2x7c9.stackpathcdn.com/photos/26/82/389769_30796_XXL.jpg" alt="">
+                <div class="name">Winter Boots</div>
+            </div>
+        </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6TX7VZ4tkub0qqPUY7Feo-SzXbeW3yNEAg2FOARo_3GMQeSQ5tKF_N8cJZh38Kd-9-0&usqp=CAU" alt="">
+                        <div class="name">Accessories</div>
+                    </div>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="https://u7q2x7c9.stackpathcdn.com/photos/21/25/334015_7499_M.jpg" alt="">
+                    <div class="name">Ski Jacket</div>
+                </div>
+            </td>
+            <td class="td">
+                <div class="card">
+                <img src="https://cdn-images.farfetch-contents.com/19/21/14/31/19211431_42266185_1000.jpg" alt="">
+                <div class="name">Puffer jacket</div>
+            </div>
+        </td>
+                </tr>
+                </table>
+            </div> -->
+            <!-- <div class="clothes clothes2">
+                <table>
+                    <tr>
+                        <td class="td">
+                            <div class="card">
+                            <img src="https://www.mrporter.com/variants/images/1647597294305474/in/w2000_q60.jpg" alt="">
+                            <div class="name"> Wool Sweater</div>
+                        </div>
+                    </td>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/HX/JU/WE/109106577/mens-turtleneck-500x500.jpg" alt="">
+                        <div class="name">Wool Turtleneck</div>
+                    </div>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="https://4.imimg.com/data4/RU/VC/MY-11853389/men-s-jackets-500x500.jpg" alt="">
+                    <div class="name">Jacket</div>
+                </div>
+            </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://target.scene7.com/is/image/Target/GUEST_eb7c5bb0-8d78-41d0-a725-12e53c187523" alt="">
+                        <div class="name">Cardigan</div>
+                    </div>
+                </td>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="https://nypost.com/wp-content/uploads/sites/2/2023/02/1-12.png" alt="">
+                    <div class="name">Trench Coat</div>
+                </div>
+            </td>
+                </tr>
+                </table>
+            </div> -->
+            <!-- <div class="clothes clothes3">
+                <table>
+                    <tr>
+                        <td class="td">
+                            <div class="card">
+                            <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1671134544-193-1671134538.png?crop=0.8256410256410256xw:1xh;center,top&resize=980:*" alt="">
+                            <div class="name">T-shirt</div>
+                        </div>
+                    </td>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://pyxis.nymag.com/v1/imgs/d60/6fe/af85f5afd92b1b977543fcaf75038345fd-amazon1.2x.rsquare.w600.jpg" alt="">
+                        <div class="name">Long-sleeved Shirt</div>
+                    </div>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="https://i5.walmartimages.com/asr/d107eab8-c3a2-44e7-9250-6f2563ea02c6.38edde2eeb2b5ded81ae2169ffe70f4d.jpeg" alt="">
+                    <div class="name">Sweater</div>
+                </div>
+            </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://asset1.cxnmarksandspencer.com/is/image/mands/SD_03_T17_1615S_E2_X_EC_90?wid=1024&qlt=80" alt="">
+                        <div class="name">Jeans</div>
+                    </div>
+                </td>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/sport-pants-26547501.jpg" alt="">
+                    <div class="name">Pants</div>
+                </div>
+            </td> 
+            <td class="td">
+                <div class="card">
+                <img src="https://static5.depositphotos.com/1000388/483/i/600/depositphotos_4833898-stock-photo-red-women-skirt-isolated-white.jpg" alt="">
+                <div class="name">Skirts</div>
+            </div>
+        </td>
+                </tr>
+                </table>
+            </div> -->
+            <!-- <div class="clothes clothes4">
+                <table>
+                    <tr>
+                        <td class="td">
+                            <div class="card">
+                            <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1671134544-193-1671134538.png?crop=0.8256410256410256xw:1xh;center,top&resize=980:*" alt="">
+                            <div class="name">T-shirt</div>
+                        </div>
+                    </td>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://agnesb-agnesb-com-storage.omn.proximis.com/Imagestorage/imagesSynchro/0/0/2a31200d83d34ed4a59384bead344b6191777dfc_3111JG13_000_1.jpeg" alt="">
+                        <div class="name">Tank Top</div>
+                    </div>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="https://cdn-images.farfetch-contents.com/15/78/61/31/15786131_29695397_1000.jpg" alt="">
+                    <div class="name">Blouse</div>
+                </div>
+            </td>
+                </tr>
+                <tr>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://media.gq.com/photos/6411ef6804c5d115aaa9f96c/master/w_1280%2Cc_limit/Layer_1.jpg" alt="">
+                        <div class="name">Shorts</div>
+                    </div>
+                </td>
+                </td>
+                <td class="td">
+                    <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/sport-pants-26547501.jpg" alt="">
+                    <div class="name">Pants</div>
+                </div>
+            </td> 
+            <td class="td">
+                <div class="card">
+                <img src="https://static5.depositphotos.com/1000388/483/i/600/depositphotos_4833898-stock-photo-red-women-skirt-isolated-white.jpg" alt="">
+                <div class="name">Skirts</div>
+            </div>
+        </td>
+                </tr>
+                </table>
+            </div> -->
+            <!-- <div class="clothes clothes5">
+                <table>
+                    <tr>
+                        <td class="td">
+                            <div class="card">
+                            <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1671134544-193-1671134538.png?crop=0.8256410256410256xw:1xh;center,top&resize=980:*" alt="">
+                            <div class="name">T-shirt</div>
+                        </div>
+                    </td>
+                    <td class="td">
+                        <div class="card">
+                        <img src="https://agnesb-agnesb-com-storage.omn.proximis.com/Imagestorage/imagesSynchro/0/0/2a31200d83d34ed4a59384bead344b6191777dfc_3111JG13_000_1.jpeg" alt="">
+                        <div class="name">Tank Top</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                    <img src="https://t3.ftcdn.net/jpg/00/96/74/82/360_F_96748234_L1OpQlE8LQJmmjGpeQZvcOVOkhxCPzCa.jpg" alt="">
+                    <div class="name">Dress</div>
+                </div>
+            </td>
+            <td>
+                <div class="card">
+                <img src="https://c8.alamy.com/comp/2B842JF/collection-of-beach-accessories-towel-sunglasses-hat-sandals-isolated-on-white-2B842JF.jpg" alt="">
+                <div class="name">Outer Layers</div>
+            </div>
+        </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card">
+                        <img src="https://media.gq.com/photos/6411ef6804c5d115aaa9f96c/master/w_1280%2Cc_limit/Layer_1.jpg" alt="">
+                        <div class="name">Shorts</div>
+                    </div>
+                </td>
+                </td>
+                <td>
+                    <div class="card">
+                    <img src="https://thumbs.dreamstime.com/b/sport-pants-26547501.jpg" alt="">
+                    <div class="name">Pants</div>
+                </div>
+            </td> 
+            <td>
+                <div class="card">
+                <img src="https://static5.depositphotos.com/1000388/483/i/600/depositphotos_4833898-stock-photo-red-women-skirt-isolated-white.jpg" alt="">
+                <div class="name">Skirts</div>
+            </div>
+        </td>
+                </tr>
+                </table>
+            </div> -->
+           </div>
+        <div class="clothesflex">
+         <div class="clothes clothes1">
+            <div class="allcard">
+                <div class="card">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMVFRUWFxUYFRcXFRcXFxcXFRcXFxcXFxUYHSggGBolGxcXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0OFQ0PFSslFRk3NzcvMS0rKzcrLDc3MCs3ODcxLSsuLSsuKzcrNy03MzAwLy4rKys1MzA3KzIrNysxNP/AABEIANkA6QMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAAAgMEBQYBB//EAEMQAAIBAgIFCQQHBwIHAAAAAAABAgMRBCEFEjFRcQYiQWGBkaGxwRMy0fAjJEJysuHxUlNigpKiwjNDFTREY3ODo//EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMFBP/EACURAQEAAgEDBAEFAAAAAAAAAAABAgMREjFBBCEiUaETFGFxgf/aAAwDAQACEQMRAD8A9xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAj4+vqU5Suk1svvbsZ+rpCrL/dkuEY277X8Sz5RZ00t8l4JlA1mvnpKF1JVn/1E+9+jI79p+/k/wCaXxFzkIlL5uFJcJ/vZd789Y6qUv3kvH4nLs7rgdvJf7k/6mhEMfVTyqzt95v1OVGR5uxRvdH1dalCV73jG767ZkgpOSOJ1qGq3dwk12PNefgXZlAAAAAAAAHJSSzeRAxOk0so5vf0ATatWMVeTSWzN2zO06ilmmnwdzKaTqylFSu2032J/nbvKzXb6WXheHoAGDhVn+3LvswrVp9M5Pi2/UcHDc1KsY5ykkutpeZW4nlBQhkp68uhQWt47PExfsqk/spdbH6OHUet7wcNnhNKwnZX1XufxJ5h6aJ+Gx04bJPg9hEakCvwWk1PKWT8PyLBAAAAAAABTaflnBbk2+2yXkypZYabmnUtuSXr6lbIqmZLMQ4D4loDjitoSGacm5vcsu21/Kz7VuH2gGpwIlaJYMjVoFFjyMqWqVIb4qX9Lt6mtMPyflq4iHXrRfanbxSNwSoAACAIGI0nGN0k319ArSVey1d+3gUU3dgSMTjJT27PAYuJsdsVXGyJPDR3W4P4ktobkgI6pW/UVq8B2wlgMyTe1hGIs6olHEhUTqR1ECSZhdJThle63MisamBrMFjY1FltW1EoyeDxGpJNGqpzuk10kQoAADNaSd6kn127svQhyJWOfOb3tkO5VcG6s1FNvZZ34Lb4CxnFLmvg/IoVQg0lfbm395u78Wx643J5nHIBxsblE7fITKQCcHlVpvdOPdc3Zg6crST615m8JSgAAiKPSlW8uDa+e1EG5Ix2ba62RqTvmVS0gOsQ2ANiJHGzjkACRYiSKOI6kIbOawCzrGkwqVAHUNWz4Zdr2jeHxSeslm42v27BSy9eIHZGn0JW1qS6sjLyZbcnsVZuD6SUaIbxErRb6hwh6UnaHEiM3iamYxKR2tLManI0olUEKSd09nxG5zGlWswJlNtR52b6RbG4Svn87h4BpjbY5MZqPIDk5m99qeexd8jeEolgAERQaRhaUuL8cyvwjzlxXj+haaTlz5fPQVdF2nbevLP4lVImNsdY1MBqRxBJgkUOROTQROzZBGkJFSENlHNYZxFSyFVZ2KzF19oDmiZfSTyzsn3N2LVFHyaq6zqvc4JcOcy8ASxVGeq1JHGjskBscFW14JkHTc8kiPydxGbgxzTe3sMoz9eRHkx+sRmiqaqlXjqrVrfO4tZkapDJlVJ0LVcodrRZMgaAp/Rv7z8oljW2BEabET2HZM4wI0XZ37Te24mCavl2HofsSFOgAivK0ZPcn5ERn8XO8m97ZArZNPc7kyoyLXKp3XuJmyJgG3Kcf2bPvv8AAeqRZQjXVxdyPCFmOgPRYmchpSG6lRgcqNjM65x1CPVATVnf54lbi1LMlVJEWuFc5Kzaqzg/tRv2xfwb7jUraYnDVvZzU19l3fWtjXdddpuVG2TVghMkccRbOSAkaDqWrLryLPTm3sKXR0rVYvrL/TdO6T4oiMzUGZE2cSFVQUzMam+aOTQhRu4rgVVro7DONOLf2rvy+A5iC2xeH1adJbk79tmVVZkRBkIkOtDdQobwMdarCO+cfxI9EMTyao61dPoWfcbYlKBnF+5LgPDeIXNlwfkRGcrEOqS6siHUkVSNGP6Wa3xXg/zRYVIFRot3xP8A6592tD1sXdQCHKI3JEiSGmgGXEZmSmhioiiJPaNSY7VQy2BHqEWsidNEXEQCkaB0d7avGDXNutbh8pnoOnMLmqiW3KXHoZQcgaN5ynu/T1NtWpqUXF7GiIyEjjHMZRcZOL6BpFDcdtzU4h69FPpsm+OxmVbsaPRdTWw3BST7M14NEopa5AqsnYlFfXmBHm9pK0Jh/aVoq11fPhtfgRJepoeR2HzlPqt3/owLnTC5qfEzlZmn0qvo3xRmKyCI7YxXY9JETEZ5FVouR9H359i7f0NKV2gcPqUYrpeb8vQsTKAZxdRRg293mPFXpirsj2/D56wKSu7EKtMl1syBViVS9Dr6aT/g/wAolzVkVOgor2knujbvf5FtXiBFnVSGfaoK1EYULASHUGJ1RMrjLgyjs5DLHbCJIKS0M1qWQ+0CiBoeQuH1aU5Ppm7cFY0pU8lV9Wg97qP/AOkrPusWxllUadoqyn07PVFLJF5pt31VxfovUppRKqNIu9BP6Kpxf4SnlA0OiqGrQf8AFrPwt5JAZ3GTzsVstpPxazZBmUN1DYcladqV978v1MZUWZu+Tq+rwe/Wf9zXoSlSsfG9ORlaxrcV7kuHlmZSptYiIkyPRjeoiTUE6Kj9KvvJeJVbmjDVio7kl3CwAygKPS0ue+zyLwz+kJXlLixBWVZZEOqyRiGQ6szSrHQFPKcrbWkuy/ftLGuKo0tWEI9Oqr8XzvURWZBDq1EQ6s0PYiJGcQFROuwgTKTKCoN3FtHGAljVepqpvch/WImkPdfAK3PJmNsLRytzE+/MsyFoWNsPRX/ap/hRKrStFvcmzLKkx1TWm30bF2EGbHKzGJFUme1JdOzia6nTtFR6Eku5WMM8eoVIt9DvbhmvE1+B0hGosuoz1Tnp592rry6evj2ZnSEecyuqlnpJ858SsmaZRasrSXabzk4vq1L7t+9tmBxK8j0HQS+r0vuR8hSptSN01vTXeY7GJqTXSmzZmW5Q07VW96T9PQRFRWqEbR1Z627McqxIdGWrO/zYqvUIu6udIujKutSi+zu2eFiUZQMzGIkaPEStGT6mZyuWCrxU7EGjBzqQgtspJeOb7iXpBE/kZgLzlXa93mw4tc59idu1hVvjHz5fOxIhVpEqu+dLi/MjVkBCmxmdh2pEjSiBxIBVhqZQobmxdxLiAhbCLjJXi0PzWRW1JPWSCvS9CP6vR/8AHT/ChzSMrU5dnmiNyeqa2Hp9S1f6W16Dmlpc1Le/JGWVLVZDxdXVi2Sqsiq0pZ6sXezedttlm0vBdpjbn0YXO+HTVh15zH7VNBe0nrO7V+jddbPnoLTAY+VGpFfZvm+p7GU9Cr9hv2M03ZPY/wCbpQ1WxNSlzay5uyMl7rzvn1ng3T6ybv3Enfw92bfT5Y/o9U4amvUUs95BqIZ0VWWrq3+71qxIqI9/VsmzCZztXibdd153C+EOttRv9C/6FO37PkYGttRuuTr+rw6tb8TN1yqyKHlPD3X2d36l8VHKOPMT6/QiMnMg1smn3k+ZErwuaVsuS1e9Nx3W7mXZkOR9bn23pruz9DXmURNJztDi0vX0KGtItdLzzS3Lz/Qpa8iqr66cnZZt5Jb29iNro7CKlTjTX2Vn1t5t9rbM/oDD69XWeyCv/M7per7EaecrJvcmKihk879Y3UF3ESColSIxJEqZHqAMiJDjQlooSkdkdRySAj1kQpwzuT6kciJWCtfyQqL2UoJ31ZX7JZ+akPaYq85R3K/f+hR8iKrVarHocE3/ACyt/kWGNq60pS37OCyREQqs9pntLSqa6lB2cbWT2WfQ9135FzXbbLajoCNXD2llOT1lK2aXQuFs+05bsbcfj3n5dtGeOOXy7X2/pjo42lX+jrR1J9fnGQVqVSjFxnH21H++K4dJI0joeV/Z1Kd2tklJR7U3YTonRuKlUdC6dPpcmm4rqayMX1Wrnpl+X15bnps+f4++fYnQtBLVcb6uq3FdKTb1U+u3kT6pJp4BUrxWe98PQjV2X02q69fGXe+9/wBT1O2bNls7eEOv0cfQ32go2w9P7t+9tmElG8krZ3/I9Gw9LVjGK+yku5WO9fPThV8of9L+ZeTLQr9ORvRfU18PUiMbMZmh2pkxuTNKseSkfpVxf4ZG2MryOpc6Ut3z8TVGaih0lUes8igxuJd7Wfd6m5q0Iy95J/O8rcRoClKSlzk077cvFFDnJ/COnSWt70m5S7dngkTMXK0JcH45DwitT1k0+kgz8mNyZMxOAks7XW9eqIMosqkMbqRHGckBGkhNh2oxtsoRY7KIqIP5yAjTiRZQzLBwuDo9QHeTmHartLJSpzjw91/4k7G4eUHmrdfQ+A3oBtYiPWpfhb2GsqUlJWkk0+hkGQ0fQ9pUStlf9eGRsUiHhNGQpyco3z2J524dJNIhNSmpZNJ8VcKdNRySS4KwoAc+GW0krTlxfmU1UutPO031lDXkVYkaJp62Ipr+JN9l5eSN8YvktC9ddSk/BL1NoKUEbSSvSlwJIxjo3pz+6/IiMNXWZGqMk4iSI0maVq+R8PopS3yt3L8y+KrkzC2Hh16z/udvBFqZQAAAAAAAN1aEZbYp+feOABDlo2HRdcH8RmWiF0SfakyyACmloT+Nf0/mc/4G/wBpdxdABTrQf8a/p/MVHQkf2n2JItgArloaHS5PtXwHIaLpL7N+Lb82TQARSpRirRiorqSQsAAAAAAAADL8oV9I+zyM9W2mi5R5TfBeX5GdlnmVYtuSf/MP7kvOJszG8j19PLqhLzgbIVKBvE+5L7r8hwTV2PgyDz7EbWhiWwfxG0Yqro6XkVXoGiqerRprdCPfZXJRyMbJLcdIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAp9MaG9tLWUlwaK2PJad85x8X6GqACs0RoaNBykpOTllnkrZfAswAAE1FdNLcxQAed4yjOEnFqzXQ8v1E4DDynVglFvnx1nZuyur8Mrmz01sRLwHuIqpAABEf/Z" alt="">
+                    <div class="name">Underwear</div>
+                </div>
+                <div class="card">
+                <img src="https://pyxis.nymag.com/v1/imgs/601/f30/44a1f148fcd870e99dd44dccaf9ec27591.jpg" alt="">
+                <div class="name">Underwear</div>
+            </div>
+            <div class="card">
+            <img src="data:image/jpeg;base64,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" alt="">
+            <div class="name">Down Jacket</div>
+        </div>
+        <div class="card">
+        <img src="https://u7q2x7c9.stackpathcdn.com/photos/26/82/389769_30796_XXL.jpg" alt="">
+        <div class="name">Winter Boots</div>
+    </div>
+        </div>
+        <div class="allcard2">
+                <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6TX7VZ4tkub0qqPUY7Feo-SzXbeW3yNEAg2FOARo_3GMQeSQ5tKF_N8cJZh38Kd-9-0&usqp=CAU" alt="">
+                <div class="name">Accessories</div>
+            </div>
+            <div class="card">
+            <img src="https://u7q2x7c9.stackpathcdn.com/photos/21/25/334015_7499_M.jpg" alt="">
+            <div class="name">Ski Jacket</div>
+        </div>
+        <div class="card">
+        <img src="https://cdn-images.farfetch-contents.com/19/21/14/31/19211431_42266185_1000.jpg" alt="">
+        <div class="name">Puffer jacket</div>
+    </div>
+            </div>
+         </div>
+         <div class="clothes clothes2">
+                         <div class="allcard">
+                            <div class="card">
+                                <img src="https://www.mrporter.com/variants/images/1647597294305474/in/w2000_q60.jpg" alt="">
+                                <div class="name"> Wool Sweater</div>
+                            </div>
+                            <div class="card">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2022/1/HX/JU/WE/109106577/mens-turtleneck-500x500.jpg" alt="">
+                            <div class="name">Wool Turtleneck</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://4.imimg.com/data4/RU/VC/MY-11853389/men-s-jackets-500x500.jpg" alt="">
+                        <div class="name">Jacket</div>
+                    </div>
+                         </div>
+                     <div class="allcard2">
+                        <div class="card">
+                            <img src="https://target.scene7.com/is/image/Target/GUEST_eb7c5bb0-8d78-41d0-a725-12e53c187523" alt="">
+                            <div class="name">Cardigan</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://nypost.com/wp-content/uploads/sites/2/2023/02/1-12.png" alt="">
+                        <div class="name">Trench Coat</div>
+                    </div>
+                     </div>
+         </div>
+         <div class="clothes clothes3">
+                         <div class="allcard">
+                            <div class="card">
+                                <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1671134544-193-1671134538.png?crop=0.8256410256410256xw:1xh;center,top&resize=980:*" alt="">
+                                <div class="name">T-shirt</div>
+                            </div>
+                            <div class="card">
+                            <img src="https://pyxis.nymag.com/v1/imgs/d60/6fe/af85f5afd92b1b977543fcaf75038345fd-amazon1.2x.rsquare.w600.jpg" alt="">
+                            <div class="name">Long-sleeved Shirt</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://i5.walmartimages.com/asr/d107eab8-c3a2-44e7-9250-6f2563ea02c6.38edde2eeb2b5ded81ae2169ffe70f4d.jpeg" alt="">
+                        <div class="name">Sweater</div>
+                    </div>
+                         </div>
+                    <div class="allcard2">
+                        <div class="card">
+                            <img src="https://asset1.cxnmarksandspencer.com/is/image/mands/SD_03_T17_1615S_E2_X_EC_90?wid=1024&qlt=80" alt="">
+                            <div class="name">Jeans</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/sport-pants-26547501.jpg" alt="">
+                        <div class="name">Pants</div>
+                    </div>
+                    <div class="card">
+                    <img src="https://static5.depositphotos.com/1000388/483/i/600/depositphotos_4833898-stock-photo-red-women-skirt-isolated-white.jpg" alt="">
+                    <div class="name">Skirts</div>
+                </div>
+                    </div>
+         </div>
+         <div class="clothes clothes4">
+                         <div class="allcard">
+                            <div class="card">
+                                <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1671134544-193-1671134538.png?crop=0.8256410256410256xw:1xh;center,top&resize=980:*" alt="">
+                                <div class="name">T-shirt</div>
+                            </div>
+                            <div class="card">
+                            <img src="https://agnesb-agnesb-com-storage.omn.proximis.com/Imagestorage/imagesSynchro/0/0/2a31200d83d34ed4a59384bead344b6191777dfc_3111JG13_000_1.jpeg" alt="">
+                            <div class="name">Tank Top</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://cdn-images.farfetch-contents.com/15/78/61/31/15786131_29695397_1000.jpg" alt="">
+                        <div class="name">Blouse</div>
+                    </div>
+                         </div>
+                     <div class="allcard2">
+                        <div class="card">
+                            <img src="https://media.gq.com/photos/6411ef6804c5d115aaa9f96c/master/w_1280%2Cc_limit/Layer_1.jpg" alt="">
+                            <div class="name">Shorts</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/sport-pants-26547501.jpg" alt="">
+                        <div class="name">Pants</div>
+                    </div>
+                    <div class="card">
+                    <img src="https://static5.depositphotos.com/1000388/483/i/600/depositphotos_4833898-stock-photo-red-women-skirt-isolated-white.jpg" alt="">
+                    <div class="name">Skirts</div>
+                </div>
+                     </div>
+         </div>
+         <div class="clothes clothes5">
+                         <div class="allcard">
+                            <div class="card">
+                                <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1671134544-193-1671134538.png?crop=0.8256410256410256xw:1xh;center,top&resize=980:*" alt="">
+                                <div class="name">T-shirt</div>
+                            </div>
+                            <div class="card">
+                            <img src="https://agnesb-agnesb-com-storage.omn.proximis.com/Imagestorage/imagesSynchro/0/0/2a31200d83d34ed4a59384bead344b6191777dfc_3111JG13_000_1.jpeg" alt="">
+                            <div class="name">Tank Top</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://t3.ftcdn.net/jpg/00/96/74/82/360_F_96748234_L1OpQlE8LQJmmjGpeQZvcOVOkhxCPzCa.jpg" alt="">
+                        <div class="name">Dress</div>
+                    </div>
+                    <div class="card">
+                    <img src="https://c8.alamy.com/comp/2B842JF/collection-of-beach-accessories-towel-sunglasses-hat-sandals-isolated-on-white-2B842JF.jpg" alt="">
+                    <div class="name">Outer Layers</div>
+                </div>
+                         </div>
+                     <div class="allcard2">
+                        <div class="card">
+                            <img src="https://media.gq.com/photos/6411ef6804c5d115aaa9f96c/master/w_1280%2Cc_limit/Layer_1.jpg" alt="">
+                            <div class="name">Shorts</div>
+                        </div>
+                        <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/sport-pants-26547501.jpg" alt="">
+                        <div class="name">Pants</div>
+                    </div>
+                    <div class="card">
+                    <img src="https://static5.depositphotos.com/1000388/483/i/600/depositphotos_4833898-stock-photo-red-women-skirt-isolated-white.jpg" alt="">
+                    <div class="name">Skirts</div>
+                </div>
+                     </div>
+         </div>
+        </div>
+    </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
